@@ -24,6 +24,7 @@
 ## IN-PROGRESS
 - [ ] Final testing and bug fixes
 - [ ] UI/UX improvements and enhancements
+- [ ] Mobile application
 
 ## TODO
-- [ ] Mobile application (next session)
+- [ ] Connect Mobile application to backend
