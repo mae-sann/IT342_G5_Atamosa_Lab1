@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.atamosa.backend.config.JwtUtil;
+import com.atamosa.backend.dto.ApiResponse;
 import com.atamosa.backend.dto.AuthRequest;
 import com.atamosa.backend.dto.AuthResponse;
 import com.atamosa.backend.dto.RegisterRequest;
@@ -34,24 +35,25 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
-        // Check if email exists
-        if (userRepository.existsByEmail(request.getEmail())) {
-            return ResponseEntity.badRequest().body("Error: Email is already taken!");
-        }
-        
-        // Create new user
-        UserEntity user = new UserEntity();
-        user.setEmail(request.getEmail());
-        user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setFirstName(request.getFirstName());
-        user.setLastName(request.getLastName());
-        
-        userRepository.save(user);
-        
-        return ResponseEntity.ok("User registered successfully!");
+   @PostMapping("/register")
+public ResponseEntity<ApiResponse> register(@RequestBody RegisterRequest request) {
+    // Check if email exists
+    if (userRepository.existsByEmail(request.getEmail())) {
+        return ResponseEntity.badRequest()
+                .body(new ApiResponse(false, "Error: Email is already taken!", null));
     }
+
+    // Create new user
+    UserEntity user = new UserEntity();
+    user.setEmail(request.getEmail());
+    user.setPassword(passwordEncoder.encode(request.getPassword()));
+    user.setFirstName(request.getFirstName());
+    user.setLastName(request.getLastName());
+
+    userRepository.save(user);
+
+    return ResponseEntity.ok(new ApiResponse(true, "User registered successfully!", null));
+}
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AuthRequest request) {
