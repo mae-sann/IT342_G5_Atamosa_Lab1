@@ -1,4 +1,4 @@
-# Lab 2 Progress Checklist
+# Lab 2-3 Progress Checklist
 
 ## DONE
 - [x] GitHub repository created (commit: 2d9b234)
@@ -19,12 +19,18 @@
 - [x] API integration (commit: c0bbfda)
 - [x] Protected routes (commit: c0bbfda)
 - [x] Logout functionality (commit: c0bbfda)
+- [x] Added mobile folder to repository (commit: 7949acf)
+- [x] Mobile folder structure created (commit: db3e2d2)
+- [x] Initial mobile app implementation (commit: 269e929)
+- [x] Updated backend with ApiResponse class (commit: 6891b7f)
+- [x] Mobile UI screenshots added (commit: 4fac91f)
+- [x] Final mobile app project completed (commit: 895d831)
+- [x] Documentation merged (commit: 69ef408)
 
 
 ## IN-PROGRESS
-- [ ] Final testing and bug fixes
-- [ ] UI/UX improvements and enhancements
-- [ ] Mobile application
+- [ ] Final testing and bug fixes (if any)
+- [ ] UI/UX polish and improvements
 
 ## TODO
-- [ ] Connect Mobile application to backend
+ [ ] No pending tasks
